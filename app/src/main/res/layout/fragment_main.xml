@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/app_normalMargin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".View.MainFragment">
+
+    <TextView
+        android:id="@+id/multiplication_title_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/textSize_title"
+        android:text="MULTIPLICATION TABLE (scrollable)" />
+
+    <HorizontalScrollView
+        android:id="@+id/multiplication_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/multiplication_title_TV"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="@dimen/app_normalMargin">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/multiplication_RV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </HorizontalScrollView>
+
+    <Spinner
+        android:id="@+id/multiplication_matrixSize_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/multiplication_scroll"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="@dimen/app_normalMargin"
+        android:entries="@array/matrixSize" />
+
+    <Spinner
+        android:id="@+id/multiplication_matrixBase_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/multiplication_matrixSize_spinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="@dimen/app_normalMargin"
+        android:entries="@array/matrixBase" />
+
+</android.support.constraint.ConstraintLayout>
